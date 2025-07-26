@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initContactForm();
         initCaseStudyModals();
         updateActiveNavLink();
-        initTypingAnimation();
+        initTextRotationAnimation();
         initEnhancedAnimations();
         
         // Hide loading screen
@@ -1006,14 +1006,15 @@ function initContactForm() {
 /************************************
  * Typing Animation                 *
  ************************************/
-function initTypingAnimation() {
-    const typingText = document.getElementById('typingText');
-    if (!typingText) {
-        console.log('Typing text element not found');
+function initTextRotationAnimation() {
+    const textElement = document.getElementById('typingText');
+    
+    if (!textElement) {
+        console.log('Text rotation element not found');
         return;
     }
     
-    console.log('Initializing typing animation');
+    console.log('Initializing text rotation animation');
     
     const phrases = [
         'Building Cloud-Native Solutions',
@@ -1024,43 +1025,43 @@ function initTypingAnimation() {
         'Leading Integration Projects'
     ];
     
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
+    let currentIndex = 0;
+    let rotationInterval;
     
-    function typeWriter() {
-        const currentPhrase = phrases[phraseIndex];
+    function rotateText() {
+        // Fade out current text
+        textElement.style.opacity = '0';
+        textElement.style.transform = 'translateY(-10px)';
         
-        if (isDeleting) {
-            typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-            typeSpeed = 50;
-        } else {
-            typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
-            typeSpeed = 100;
-        }
-        
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            // Pause at end of phrase
-            typeSpeed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
-        }
-        
-        setTimeout(typeWriter, typeSpeed);
+        setTimeout(() => {
+            // Change text
+            textElement.textContent = phrases[currentIndex];
+            currentIndex = (currentIndex + 1) % phrases.length;
+            
+            // Fade in new text
+            textElement.style.opacity = '1';
+            textElement.style.transform = 'translateY(0)';
+        }, 300);
     }
     
-    // Ensure element is visible and start animation
-    typingText.style.opacity = '1';
-    typingText.style.visibility = 'visible';
+    // Set initial text
+    textElement.textContent = phrases[0];
+    textElement.style.opacity = '1';
+    textElement.style.visibility = 'visible';
+    textElement.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     
-    // Start typing animation immediately
-    typeWriter();
+    // Start rotation after initial delay
+    setTimeout(() => {
+        currentIndex = 1; // Move to next phrase for first rotation
+        rotationInterval = setInterval(rotateText, 3000); // Change every 3 seconds
+    }, 3000);
+    
+    // Clean up on page unload
+    window.addEventListener('beforeunload', () => {
+        if (rotationInterval) {
+            clearInterval(rotationInterval);
+        }
+    });
 }
 
 /************************************
@@ -1269,7 +1270,7 @@ function preloadCriticalResources() {
 // Initialize additional features when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     preloadCriticalResources();
-    initTypingAnimation();
+    initTextRotationAnimation();
     initSkillsAnimation();
 });
 
