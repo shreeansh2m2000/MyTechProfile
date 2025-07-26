@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study Button Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .case-study-btn { 
+            margin: 10px; 
+            padding: 10px 20px; 
+            background: #007acc; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal.show {
+            display: block;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        .case-study-section {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        h3, h4, h5 {
+            color: #333;
+            margin: 15px 0 10px 0;
+        }
+        .test-status {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Case Study Button Test</h1>
+    <div id="testStatus" class="test-status"></div>
+    
+    <h2>Test Buttons:</h2>
+    <button class="case-study-btn" data-project="nexusone">NexusOne</button>
+    <button class="case-study-btn" data-project="azure-automation">Azure Automation</button>
+    <button class="case-study-btn" data-project="marketplace-integration">Marketplace Integration</button>
+    <button class="case-study-btn" data-project="biztalk-modernization">BizTalk Modernization</button>
+    <button class="case-study-btn" data-project="sap-vm-quality-check">SAP VM Quality Check</button>
+    <button class="case-study-btn" data-project="cloud-migration">Cloud Migration</button>
+
+    <!-- Modal -->
+    <div id="caseStudyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Case Study</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Test function to verify case studies are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const testStatus = document.getElementById('testStatus');
+            
+            try {
+                // Check if getCaseStudies function exists
+                if (typeof getCaseStudies === 'function') {
+                    const caseStudies = getCaseStudies();
+                    const expectedKeys = ['nexusone', 'azure-automation', 'marketplace-integration', 'biztalk-modernization', 'sap-vm-quality-check', 'cloud-migration'];
+                    const availableKeys = Object.keys(caseStudies);
+                    
+                    let missingKeys = expectedKeys.filter(key => !availableKeys.includes(key));
+                    let emptyContent = [];
+                    
+                    // Check if content is not empty
+                    expectedKeys.forEach(key => {
+                        if (caseStudies[key] && (!caseStudies[key].content || caseStudies[key].content.trim().length < 100)) {
+                            emptyContent.push(key);
+                        }
+                    });
+                    
+                    if (missingKeys.length === 0 && emptyContent.length === 0) {
+                        testStatus.className = 'test-status success';
+                        testStatus.innerHTML = '✅ All case studies loaded successfully!<br>Available: ' + availableKeys.join(', ');
+                    } else {
+                        testStatus.className = 'test-status error';
+                        let errorMsg = '❌ Issues found:<br>';
+                        if (missingKeys.length > 0) {
+                            errorMsg += 'Missing keys: ' + missingKeys.join(', ') + '<br>';
+                        }
+                        if (emptyContent.length > 0) {
+                            errorMsg += 'Empty content: ' + emptyContent.join(', ');
+                        }
+                        testStatus.innerHTML = errorMsg;
+                    }
+                } else {
+                    testStatus.className = 'test-status error';
+                    testStatus.innerHTML = '❌ getCaseStudies function not found';
+                }
+            } catch (error) {
+                testStatus.className = 'test-status error';
+                testStatus.innerHTML = '❌ Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

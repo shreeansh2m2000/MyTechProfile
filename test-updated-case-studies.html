@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Updated Case Studies</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .test-button:hover {
+            background: #005599;
+        }
+        .test-results {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Updated Case Studies Test</h1>
+        
+        <div id="testResults" class="test-results info">
+            Testing updated case studies...
+        </div>
+        
+        <h2>Test Updated Case Studies</h2>
+        <p>Click these buttons to test the updated case studies:</p>
+        
+        <button class="test-button" onclick="testCaseStudy('biztalk-modernization')">
+            📄 Test BizTalk Case Study (Updated)
+        </button>
+        
+        <button class="test-button" onclick="testCaseStudy('marketplace-integration')">
+            📸 Test Marketplace Case Study (With Images)
+        </button>
+        
+        <h2>📊 Test Results</h2>
+        <div id="results"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="caseStudyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Case Study</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        let testResults = [];
+        
+        function testCaseStudy(projectId) {
+            const results = document.getElementById('results');
+            const testResults = document.getElementById('testResults');
+            
+            console.log('Testing case study:', projectId);
+            
+            if (typeof getCaseStudies === 'function') {
+                const caseStudies = getCaseStudies();
+                const study = caseStudies[projectId];
+                
+                if (study) {
+                    const contentLength = study.content.length;
+                    const hasImages = study.content.includes('<img');
+                    const hasTable = study.content.includes('<table');
+                    const hasSections = (study.content.match(/<h4>/g) || []).length;
+                    
+                    const result = document.createElement('div');
+                    result.style.background = '#d4edda';
+                    result.style.padding = '10px';
+                    result.style.margin = '10px 0';
+                    result.style.borderRadius = '5px';
+                    result.style.border = '1px solid #c3e6cb';
+                    
+                    let specialFeatures = [];
+                    if (projectId === 'biztalk-modernization') {
+                        specialFeatures.push('Full content from Biztalk.md');
+                    }
+                    if (projectId === 'marketplace-integration') {
+                        const imageCount = (study.content.match(/<img/g) || []).length;
+                        specialFeatures.push(`${imageCount} images added`);
+                    }
+                    
+                    result.innerHTML = `
+                        ✅ <strong>Case Study "${projectId}" Test Results:</strong><br>
+                        📏 Content length: ${contentLength} characters<br>
+                        🖼️ Has images: ${hasImages ? 'Yes' : 'No'}<br>
+                        📊 Has tables: ${hasTable ? 'Yes' : 'No'}<br>
+                        📑 Sections count: ${hasSections}<br>
+                        ⭐ Special features: ${specialFeatures.join(', ') || 'None'}<br>
+                        🕒 Tested at: ${new Date().toLocaleTimeString()}
+                    `;
+                    
+                    results.appendChild(result);
+                    
+                    // Test modal opening
+                    if (typeof testModal === 'function') {
+                        testModal(projectId);
+                    }
+                    
+                    testResults.className = 'test-results success';
+                    testResults.innerHTML = '✅ All tests completed successfully!';
+                    
+                } else {
+                    const result = document.createElement('div');
+                    result.style.background = '#f8d7da';
+                    result.style.padding = '10px';
+                    result.style.margin = '10px 0';
+                    result.style.borderRadius = '5px';
+                    result.innerHTML = `❌ <strong>Error:</strong> Case study "${projectId}" not found!`;
+                    results.appendChild(result);
+                }
+            } else {
+                testResults.className = 'test-results error';
+                testResults.innerHTML = '❌ getCaseStudies function not available!';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const testResults = document.getElementById('testResults');
+            
+            if (typeof getCaseStudies === 'function') {
+                const caseStudies = getCaseStudies();
+                const biztalkStudy = caseStudies['biztalk-modernization'];
+                const marketplaceStudy = caseStudies['marketplace-integration'];
+                
+                let status = [];
+                
+                if (biztalkStudy && biztalkStudy.content.length > 1000) {
+                    status.push('✅ BizTalk case study has full content');
+                } else {
+                    status.push('❌ BizTalk case study missing content');
+                }
+                
+                if (marketplaceStudy && marketplaceStudy.content.includes('Implementation Screenshots')) {
+                    status.push('✅ Marketplace case study has images');
+                } else {
+                    status.push('❌ Marketplace case study missing images');
+                }
+                
+                testResults.innerHTML = status.join('<br>');
+                
+                if (status.every(s => s.startsWith('✅'))) {
+                    testResults.className = 'test-results success';
+                } else {
+                    testResults.className = 'test-results error';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
