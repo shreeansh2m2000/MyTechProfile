@@ -536,11 +536,12 @@ a:hover {
 
 .btn--download {
   background: var(--accent-secondary);
-  color: var(--text-inverse);
+  color: #FFFFFF;
 }
 
 .btn--download:hover {
-  background: var(--accent-secondary);
+  background: #0D9568;
+  color: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow-green);
 }
