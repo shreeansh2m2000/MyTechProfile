@@ -10,15 +10,48 @@ This is a static portfolio website for Shreeansh Srivastava, a Cloud-first Softw
 
 ### Core Files
 - `index.html` - Main HTML structure with semantic sections (hero, about, skills, certifications, experience, projects, education, contact)
-- `app.js` - JavaScript functionality including navigation, scroll effects, modal handling, and form interactions
-- `style.css` - Comprehensive CSS with dark theme variables, responsive design, and terminal-inspired styling
-- `DSC04111-PhotoRoom.png-PhotoRoom.png` - Profile image
-- `Shreeansh_Srivastava_Resume_2025.pdf` - Downloadable resume
+- `assets/scripts/main.js` - JavaScript functionality including navigation, scroll effects, modal handling, and form interactions
+- `assets/styles/main.css` - Comprehensive CSS with dark theme variables, responsive design, and terminal-inspired styling
+- `assets/images/profile.png` - Profile image
+- `assets/documents/resume.pdf` - Downloadable resume
+
+### Directory Structure
+```
+/
+├── index.html                          # Main HTML file
+├── assets/                             # Static assets
+│   ├── images/                         # Image files
+│   │   └── profile.png                 # Profile photo
+│   ├── styles/                         # CSS files
+│   │   └── main.css                    # Main stylesheet
+│   ├── scripts/                        # JavaScript files
+│   │   └── main.js                     # Main JavaScript
+│   └── documents/                      # Document files
+│       └── resume.pdf                  # Resume PDF
+├── docs/                               # Documentation and case studies
+│   └── case-studies/                   # Project case studies
+│       ├── nexusone-architecture.png   # Project images
+│       ├── nexusone.md                 # Project documentation
+│       ├── azure-automation-architecture.png
+│       ├── azure-automation.md
+│       ├── marketplace-integration.md
+│       ├── biztalk-architecture.png
+│       ├── biztalk-modernization.md
+│       ├── sap-architecture.png
+│       ├── sap-vm-quality-check.md
+│       ├── airindia-architecture.png
+│       ├── airindia-migration.md
+│       └── MKP/                        # Marketplace project screenshots
+│           ├── mkp-dashboard.png
+│           ├── mkp-integration.png
+│           └── mkp-architecture.png
+└── CLAUDE.md                           # Project documentation
+```
 
 ### Case Study Content
-- `CaseStudy/` directory contains project documentation and images
-- Case studies are embedded in JavaScript objects within `app.js`
-- Images are referenced for visual documentation of project architectures
+- `docs/case-studies/` directory contains project documentation and images
+- Case studies are embedded in JavaScript objects within `assets/scripts/main.js`
+- Images use professional naming conventions and are organized by project
 
 ## Key Design Patterns
 
@@ -63,12 +96,14 @@ npx serve .
 
 ### Adding New Projects
 1. Add project card HTML to the `.projects-grid` section in `index.html`
-2. Add corresponding case study data to the `caseStudies` object in `app.js`
+2. Add corresponding case study data to the `caseStudies` object in `assets/scripts/main.js`
 3. Ensure proper data-project attributes match the case study keys
+4. Place project images in `docs/case-studies/` with descriptive names
 
 ### Updating Case Studies
-- Case study content is stored as HTML strings in the `caseStudies` object in `app.js:228-541`
-- Images should be placed in the `CaseStudy/` directory
+- Case study content is stored as HTML strings in the `caseStudies` object in `assets/scripts/main.js:228-541`
+- Images should be placed in the `docs/case-studies/` directory
+- Use professional naming conventions: `project-name-architecture.png`, `project-name.md`
 - Use the established HTML structure with `.case-study-section` classes
 
 ### Modifying Skills

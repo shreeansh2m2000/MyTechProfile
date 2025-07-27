@@ -266,7 +266,7 @@ function getCaseStudies() {
             title: 'NexusOne – Unified Integration Monitoring and Remediation Platform',
             content: `
                 <div class="case-study-section">
-                    <img src="CaseStudy/NexusOne.png" alt="NexusOne Integration Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+                    <img src="docs/case-studies/nexusone-architecture.png" alt="NexusOne Integration Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
                     <h3>NexusOne – Unified Integration Monitoring and Remediation Platform</h3>
                 </div>
                 <div class="case-study-section">
@@ -350,7 +350,7 @@ function getCaseStudies() {
             title: 'Azure Automation as a Service: Infrastructure Provisioning Revolution',
             content: `
                 <div class="case-study-section">
-                    <img src="CaseStudy/Azure Automation as a Service.png" alt="Azure Automation as a Service Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+                    <img src="docs/case-studies/azure-automation-architecture.png" alt="Azure Automation as a Service Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
                     <h3>CSmart – Azure Automation as a Service</h3>
                 </div>
                 <div class="case-study-section">
@@ -523,13 +523,13 @@ function getCaseStudies() {
                     <h4>Implementation Screenshots</h4>
                     <div style="display: grid; gap: 20px; margin-top: 20px;">
                         <div>
-                            <img src="CaseStudy/MKP/Screenshot 2025-07-26 043736.png" alt="WorkSpan Marketplace Platform Dashboard" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <img src="docs/case-studies/MKP/mkp-dashboard.png" alt="WorkSpan Marketplace Platform Dashboard" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         </div>
                         <div>
-                            <img src="CaseStudy/MKP/Screenshot 2025-07-26 043817.png" alt="Multi-Cloud Marketplace Integration Interface" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <img src="docs/case-studies/MKP/mkp-integration.png" alt="Multi-Cloud Marketplace Integration Interface" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         </div>
                         <div>
-                            <img src="CaseStudy/MKP/Screenshot 2025-07-26 043847.png" alt="Offer Management and Analytics Portal" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <img src="docs/case-studies/MKP/mkp-architecture.png" alt="Offer Management and Analytics Portal" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         </div>
                     </div>
                 </div>
@@ -539,7 +539,7 @@ function getCaseStudies() {
             title: 'BizTalk-to-AIS Modernization: Legacy Infrastructure Transformation',
             content: `
                 <div class="case-study-section">
-                    <img src="CaseStudy/Biztalk architechure.png" alt="BizTalk to AIS Migration Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+                    <img src="docs/case-studies/biztalk-architecture.png" alt="BizTalk to AIS Migration Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
                 </div>
                 <div class="case-study-section">
                     <h4>Overview</h4>
@@ -606,7 +606,7 @@ function getCaseStudies() {
             title: 'SAP VM Quality Check – Q-Smart',
             content: `
                 <div class="case-study-section">
-                    <img src="CaseStudy/sap.png" alt="Q-Smart SAP VM Quality Check Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+                    <img src="docs/case-studies/sap-architecture.png" alt="Q-Smart SAP VM Quality Check Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
                     <h3>SAP VM Quality Check – Q-Smart</h3>
                 </div>
                 <div class="case-study-section">
@@ -687,7 +687,7 @@ function getCaseStudies() {
             title: 'Cloud Migration & API Management: Secure Azure Infrastructure Transformation',
             content: `
                 <div class="case-study-section">
-                    <img src="CaseStudy/airindia.png" alt="Azure Cloud Migration Technical Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
+                    <img src="docs/case-studies/airindia-architecture.png" alt="Azure Cloud Migration Technical Architecture" style="width:100%; border-radius: 8px; margin-bottom: 20px;">
                     <h3>Cloud Migration & API Management: Secure Azure Infrastructure Transformation</h3>
                 </div>
                 <div class="case-study-section">
