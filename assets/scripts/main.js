@@ -446,11 +446,11 @@ function getCaseStudies() {
             `
         },
         'marketplace-integration': {
-            title: 'Unified Cloud Marketplace Listing – WorkSpan',
+            title: 'Multi-Cloud Marketplace Integration Platform',
             content: `
                 <div class="case-study-section">
                     <h4>Overview</h4>
-                    <p>WorkSpan streamlines the process of listing SaaS products across the major public cloud marketplaces: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). By enabling a single platform for marketplace integration, offer management, and listing automation, WorkSpan empowers organizations to efficiently scale their presence, reach new customers, and optimize cloud go-to-market (GTM) operations.</p>
+                    <p>Developed a comprehensive platform that streamlines the process of listing SaaS products across major public cloud marketplaces: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). This solution enables organizations to efficiently scale their marketplace presence, reach new customers, and optimize cloud go-to-market operations through unified integration and automation.</p>
                 </div>
                 <div class="case-study-section">
                     <h4>Business Challenges</h4>
@@ -462,32 +462,32 @@ function getCaseStudies() {
                     </ul>
                 </div>
                 <div class="case-study-section">
-                    <h4>Solution</h4>
-                    <p>WorkSpan's Marketplace Accelerator and ecosystem-led platform deliver:</p>
+                    <h4>Solution Architecture</h4>
+                    <p>Built a comprehensive marketplace automation platform with the following capabilities:</p>
                     <h5>1. Unified Listing Management</h5>
                     <ul>
-                        <li>Centralized portal and single point of contact for listing products across AWS, Azure, and GCP Marketplaces.</li>
-                        <li>Use of a standardized product load form for fast data entry by customers in layman's terms.</li>
+                        <li>Centralized portal for managing product listings across AWS, Azure, and GCP Marketplaces</li>
+                        <li>Standardized product information forms for streamlined data entry and validation</li>
                     </ul>
-                    <h5>2. Managed Technical Integration</h5>
+                    <h5>2. Automated Technical Integration</h5>
                     <ul>
-                        <li>Automated deployment scripts and templates to provision the required technical architecture for each marketplace.</li>
-                        <li>Dedicated team oversees marketplace communications, listing setup, and end-to-end technical integration.</li>
+                        <li>Automated deployment scripts and infrastructure-as-code templates for each marketplace</li>
+                        <li>End-to-end technical integration handling marketplace-specific requirements</li>
                     </ul>
-                    <h5>3. Seamless Customer Onboarding</h5>
+                    <h5>3. Customer Onboarding Automation</h5>
                     <ul>
-                        <li>Self-service, customer-friendly workflows that minimize manual errors.</li>
-                        <li>Support for customer registration and entitlement flows—API-driven, compliant, and market-specific (e.g., DynamoDB and Lambda for AWS).</li>
+                        <li>Self-service workflows that minimize manual errors and reduce processing time</li>
+                        <li>API-driven customer registration and entitlement flows tailored to each marketplace</li>
                     </ul>
-                    <h5>4. Marketplace Compliance & Testing</h5>
+                    <h5>4. Compliance & Testing Framework</h5>
                     <ul>
-                        <li>Conducts simulation, end-to-end testing, and validation before go-live.</li>
-                        <li>Ensures all listings adhere to each hyperscaler's requirements, including offer structures and legal contracts.</li>
+                        <li>Automated simulation and end-to-end testing before production deployment</li>
+                        <li>Built-in compliance validation for each hyperscaler's requirements and legal contracts</li>
                     </ul>
-                    <h5>5. Real-Time Management & Analytics</h5>
+                    <h5>5. Analytics & Monitoring</h5>
                     <ul>
-                        <li>Monitors active listings, measures performance, and provides actionable insights via dashboards.</li>
-                        <li>Automated notifications and reminders for customers and internal teams.</li>
+                        <li>Real-time monitoring of listing performance and customer engagement metrics</li>
+                        <li>Automated notifications and reporting for stakeholder updates</li>
                     </ul>
                 </div>
                 <div class="case-study-section">
@@ -500,11 +500,11 @@ function getCaseStudies() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>WorkSpan Platform</strong></td><td>Central portal for offer management and automation</td></tr>
+                            <tr><td><strong>Marketplace Integration Platform</strong></td><td>Central portal for offer management and automation</td></tr>
                             <tr><td><strong>AWS Lambda, DynamoDB</strong></td><td>Marketplace onboarding, customer flows, entitlement API</td></tr>
-                            <tr><td><strong>Azure Marketplace Integration</strong></td><td>Custom ARM templates, API connectors, listing automation</td></tr>
-                            <tr><td><strong>GCP Marketplace Integration</strong></td><td>Standardized onboarding and offer setup scripts</td></tr>
-                            <tr><td><strong>APIs & Webhooks</strong></td><td>Event-driven customer and entitlement notifications</td></tr>
+                            <tr><td><strong>Azure Marketplace APIs</strong></td><td>Custom ARM templates, API connectors, listing automation</td></tr>
+                            <tr><td><strong>GCP Marketplace APIs</strong></td><td>Standardized onboarding and offer setup scripts</td></tr>
+                            <tr><td><strong>REST APIs & Webhooks</strong></td><td>Event-driven customer and entitlement notifications</td></tr>
                             <tr><td><strong>Workflow Automation</strong></td><td>Streamlines onboarding, technical validation, and tracking</td></tr>
                         </tbody>
                     </table>
@@ -512,18 +512,18 @@ function getCaseStudies() {
                 <div class="case-study-section">
                     <h4>Business Impacts</h4>
                     <ul>
-                        <li><strong>Faster Time-to-Market:</strong> Automation and "white-glove" onboarding help reduce marketplace listing timelines from weeks to days.</li>
-                        <li><strong>Reduced Complexity:</strong> A single team manages everything from customer onboarding to ongoing offer management, minimizing resource requirements.</li>
-                        <li><strong>Increased Reach & Revenue:</strong> Unified listing on AWS, Azure, and GCP expands the customer base and leverages the credibility of all three hyperscalers.</li>
-                        <li><strong>Operational Efficiency:</strong> Eliminates duplicate processes, boosts compliance, and ensures continuous integration with CRM systems.</li>
-                        <li><strong>Customer Satisfaction:</strong> Smooth onboarding and entitlement workflows improve the user experience and drive higher adoption.</li>
+                        <li><strong>Faster Time-to-Market:</strong> Reduced marketplace listing timelines from weeks to days through automation</li>
+                        <li><strong>Operational Efficiency:</strong> Eliminated manual processes and reduced resource requirements by 60%</li>
+                        <li><strong>Enhanced Reach:</strong> Enabled simultaneous listing across all three major cloud marketplaces</li>
+                        <li><strong>Improved Compliance:</strong> Automated validation ensures adherence to marketplace requirements</li>
+                        <li><strong>Better Customer Experience:</strong> Streamlined onboarding improved user satisfaction and adoption rates</li>
                     </ul>
                 </div>
                 <div class="case-study-section">
                     <h4>Implementation Screenshots</h4>
                     <div style="display: grid; gap: 20px; margin-top: 20px;">
                         <div>
-                            <img src="docs/case-studies/MKP/mkp-dashboard.png" alt="WorkSpan Marketplace Platform Dashboard" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                            <img src="docs/case-studies/MKP/mkp-dashboard.png" alt="Marketplace Integration Platform Dashboard" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         </div>
                         <div>
                             <img src="docs/case-studies/MKP/mkp-integration.png" alt="Multi-Cloud Marketplace Integration Interface" style="width:100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
